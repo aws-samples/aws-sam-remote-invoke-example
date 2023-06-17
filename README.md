@@ -1,17 +1,7 @@
-## My Project
+# AWS SAM 'remote invoke' test application
 
-TODO: Fill this README out!
+This repository contains the demo application for the AWS SAM CLI `remote invoke` command. For a full explanation of 
+this application refer to the [blog post](https://aws.amazon.com/blogs/compute/testing-aws-lambda-functions-with-aws-sam-remote-invoke).
 
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
-
-## Security
-
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
-
-## License
-
-This library is licensed under the MIT-0 License. See the LICENSE file.
+## Deploying the application
 

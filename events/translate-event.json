@@ -1,0 +1,7 @@
+{
+  "request-id":"4857uitfrekuw38948o3",
+  "order":"3452",
+  "userId":"2093845uireklw",
+  "message":"The AWS Serverless Application Model (SAM) is an open-source framework for building serverless applications. It provides shorthand syntax to express functions, APIs, databases, and event source mappings. With just a few lines per resource, you can define the application you want and model it using YAML. During deployment, SAM transforms and expands the SAM syntax into AWS CloudFormation syntax, enabling you to build serverless applications faster. To get started with building SAM-based applications, use the AWS SAM CLI. SAM CLI provides a Lambda-like execution environment that lets you locally build, test, and debug applications defined by SAM templates or through the AWS Cloud Development Kit (CDK). You can also use the SAM CLI to deploy your applications to AWS, or create secure continuous integration and deployment (CI/CD) pipelines that follow best practices and integrate with AWS' native and third party CI/CD systems. SAM and SAM CLI are open-sourced under the Apache 2.0 license. You can contribute new features and enhancements to SAM on GitHub or SAM CLI on GitHub. Getting Started with SAM",
+  "target-language": "de"
+}

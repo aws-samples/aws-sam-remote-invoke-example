@@ -1,0 +1,51 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Remote invoke example application
+
+Globals:
+  Function:
+    Timeout: 60
+    MemorySize: 512
+    Architectures:
+      - arm64
+
+Resources:
+  TranslateFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/translate/
+      Handler: app.lambda_handler
+      Runtime: python3.10
+      Environment:
+        Variables:
+          POWERTOOLS_SERVICE_NAME: remote-tester
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - 'translate:TranslateText'
+              Resource: '*'
+  StreamFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/stream/
+      Handler: index.handler
+      Runtime: nodejs18.x
+      FunctionUrlConfig:
+        AuthType: AWS_IAM
+        InvokeMode: RESPONSE_STREAM
+
+Outputs:
+  TranslateFunctionName:
+    Description: The actual name of the Lambda function
+    Value: !Ref TranslateFunction
+  StreamFunctionName:
+    Description: The actual name of the Lambda function
+    Value: !Ref StreamFunction
+  StreamingFunctionURL:
+    Description: "Streaming Lambda Function URL"
+    Value: !GetAtt StreamFunctionUrl.FunctionUrl
