@@ -22,11 +22,12 @@ def lambda_handler(event, context):
         })
         return 'Target language not found in event'
 
+    target_language = event['target-language']
     try:
         translated_text = translate.translate_text(
             Text=event['message'],
             SourceLanguageCode='en',
-            TargetLanguageCode='es'
+            TargetLanguageCode=target_language
         )
         logger.info({
             "status": "success",
