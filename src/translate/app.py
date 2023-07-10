@@ -26,7 +26,7 @@ def lambda_handler(event, context):
         translated_text = translate.translate_text(
             Text=event['message'],
             SourceLanguageCode='en',
-            TargetLanguageCode='es'
+            TargetLanguageCode=event['target-language']
         )
         logger.info({
             "status": "success",
